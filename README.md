@@ -190,7 +190,10 @@ console.log(Number.isNaN('1')); //false
 ```
 - Number.isInteger()用来判断一个值是否为整数。需要注意的是，在 JavaScript 内部，整数和浮点数是同样的储存方法，所以 3 和 3.0 被视为同一个值
 ```
-
+console.log(Number.isInteger(1)); //true
+console.log(Number.isInteger(1.0)); //true
+console.log(Number.isInteger('1')); //false
+console.log(Number.isInteger(1.2)); //false
 ```
 ## 传说中的彩蛋
 - 
