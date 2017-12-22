@@ -1,8 +1,8 @@
 # Javascript-ES6-ECMAScript6-ES2015
 本项目对ES6涉及的语法知识给予介绍，并给出大量简洁易懂的示例代码。  本项目为中级难度，适合已经掌握 ES5 的开发人员，用来了解这门语言的新发展；也可当作参考手册，查寻新增的语法点。
 
-#let和const
-- 块级作用域，ES5 只有全局作用域和函数作用域，没有块级作用域，这样的缺点是：1.用来计数的循环变量泄露为全局变量。2.内层变量可能会覆盖外层变量
+# let和const
+### 块级作用域，ES5 只有全局作用域和函数作用域，没有块级作用域，这样的缺点是：1.用来计数的循环变量泄露为全局变量。2.内层变量可能会覆盖外层变量
 
 ```
 var tmp = new Date();
@@ -39,7 +39,7 @@ const声明变量不能在声明之后再赋值,只能声明的时候进行赋�
 const p; //Uncaught SyntaxError: Missing initializer in const declaration
 p = 2;
 ```
-- let、const声明变量不存在变量提升
+### let、const声明变量不存在变量提升
 ```
 a = 1;
 var a;
@@ -52,7 +52,7 @@ c = 3;
 const c; //Uncaught SyntaxError: Missing initializer in const declaration
 console.log(c);
 ```
-- 不允许重复声明
+### 不允许重复声明
 ```
 var a = 1;
 var a = 2;
