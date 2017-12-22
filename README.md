@@ -64,3 +64,13 @@ let b = 1;
 let b = 2; //Uncaught SyntaxError: Identifier 'b' has already been declared
 console.log(b);
 ```
+### 注意
+
+const在声明对象的时候，const常量指向的是对象存储的指针，此时修改对象内部的属性并不会报错。
+```
+const k = {
+    a:1
+};
+k.b = 2;
+console.log(k); //{a:1, b:@}
+```
