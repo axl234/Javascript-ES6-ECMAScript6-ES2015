@@ -140,6 +140,13 @@ let str = '1';
 console.log(str.padStart(2, '0')); //01
 console.log(str.padEnd(2, '0')); //10
 ```
+- String.raw方法，往往用来充当模板字符串的处理函数，返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，对应于替换变量后的模板字符串。
+```
+console.log(String.raw`h\n23\45`);// h\n23\45
+console.log('h\n23\45');
+//h 
+//23%
+```
 ### 二、模板字符串
 
 模板字符串是增强版的字符串，用反引号（`）标识
