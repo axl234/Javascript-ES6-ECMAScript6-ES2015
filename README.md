@@ -265,6 +265,10 @@ console.log([1, 23, 45, 3, 5, 56, 23].find(item => item > 20));// 23
 ```
 console.log([1, 23, 45, 3, 5, 56, 23].findIndex(item => item > 20));// 1
 ```
+- includes方法返回一个布尔值，表示某个数组是否包含给定的值
+```
+console.log([1, 2, 34].includes(2)); //true
+```
 ## 传说中的彩蛋
 - 
 ## 说明
