@@ -168,7 +168,7 @@ console.log(str);
 //一个
 //终生学习者
 ```
-### 数值扩展
+## 数值扩展
 
 - 二进制、八进制的表示方法
 ```
@@ -217,6 +217,45 @@ console.log(Math.sign("hello")); //NaN
 - Math.cbrt方法用于计算一个数的立方根,对于非数值，Math.cbrt方法内部也是先使用Number方法将其转为数值。x³=a，那么x叫做a的立方根
 ```
 console.log(Math.cbrt(8)); //2
+```
+## 数组对象的扩展
+- Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map
+```
+let pArr = Array.from(document.getElementsByTagName('p'));
+pArr.forEach(item => {
+    console.log(item.textContent);
+});
+```
+- Array.of方法用于将一组值，转换为数组
+```
+console.log(Array.of(1, 2, 3, 'sdf', [1, 2,3]));// [1, 2, 3, 'sdf', [1, 2, 3]]
+console.log(Array.of()); //[]
+```
+- fill方法使用给定值，填充一个数组,方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
+```
+console.log([1, 23, NaN].fill(8));  // [8, 8, 8]
+console.log([1, 3, 23, 're', undefined, NaN].fill(7, 1, 3));//[1, 7, 7, "re", undefined, NaN]
+```
+- keys()和values()——用于遍历数组。它们都返回一个遍历器对象，可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。
+```
+for(let index of [1, 2, 3, 4, 5].keys()){
+    console.log(index);// 0, 1, 2, 3, 4
+}
+
+for (let [index, value] of [1, 23, 234, 4, 5, 34].entries()){
+    console.log(index, value);
+    // 0 1
+    // 1 23
+    // 2 234
+    // 3 4
+    // 4 5
+    // 5 34
+}
+```
+- copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。也就是说，使用这个方法，会修改当前数组。
+它接受三个参数。target（必需）：从该位置开始替换数据。start（可选）：从该位置开始读取数据，默认为 0。如果为负值，表示倒数。end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。
+```
+console.log([17,26,53,44,25,6, 23, 84, 92].copyWithin(2, 3, 5)); //[17, 26, 44, 25, 25, 6, 23, 84, 92]
 ```
 
 ## 传说中的彩蛋
