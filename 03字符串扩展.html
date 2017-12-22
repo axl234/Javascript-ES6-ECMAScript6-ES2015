@@ -9,6 +9,30 @@
 </head>
 <body>
     <script>
+
+        {
+            let str = '1';
+            console.log(str.padStart(2, '0')); //01
+            console.log(str.padEnd(2, '0')); //10
+        }
+
+        {
+            let str = ' 11 ';
+            console.log(str.length);
+            console.log(str.trim().length);
+        }
+
+        {
+           let str = ` 我是
+           一个
+           终生学习者 s`
+
+            console.log(str);
+            //我是
+           //一个
+           //终生学习者
+        }
+
         {
             const name = 'FangFeiyue';
             console.log(`My name is ${name}`);//My name is FangFeiyue

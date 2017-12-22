@@ -102,7 +102,7 @@ b = 2;
 [a, b] = [2, 1];
 console.log(a, b); //2, 1
 ```
-- 模拟去除json中某个值
+- 取出json中某个值
 ```
 let metaData = {
     title: 'abc',
@@ -134,10 +134,30 @@ console.log(str.endsWith('g'));// true
 let str = 'string';
 console.log(str.repeat(3)); //stringstringstring
 ```
+- padStart()，padEnd() ES2017 引入了字符串补全长度的功能,如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全,这两个方法接收两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串
+```
+let str = '1';
+console.log(str.padStart(2, '0')); //01
+console.log(str.padEnd(2, '0')); //10
+```
 ### 二、模板字符串
+
+模板字符串是增强版的字符串，用反引号（`）标识
 ```
 const name = 'FangFeiyue';
 console.log(`My name is ${name}`);//My name is FangFeiyue
+```
+
+如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中
+```
+let str = `我是
+一个
+终生学习者`
+
+console.log(str);
+//我是
+//一个
+//终生学习者
 ```
 ## 传说中的彩蛋
 - 
