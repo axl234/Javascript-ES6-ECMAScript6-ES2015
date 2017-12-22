@@ -195,6 +195,16 @@ console.log(Number.isInteger(1.0)); //true
 console.log(Number.isInteger('1')); //false
 console.log(Number.isInteger(1.2)); //false
 ```
+- Number.isSafeInteger判断一个数字是否在有效范围内
+```
+console.log(Number.MAX_SAFE_INTEGER);//最大数
+console.log(Number.MIN_SAFE_INTEGER);//最小数
+console.log(Number.isSafeInteger(10));
+```
+- Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+```
+console.log(Math.trunc(4.5)); // 4
+```
 ## 传说中的彩蛋
 - 
 ## 说明
