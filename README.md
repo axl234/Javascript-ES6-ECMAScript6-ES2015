@@ -2,7 +2,7 @@
 本项目对ES6涉及的语法知识给予介绍，并给出大量简洁易懂的示例代码。  本项目为中级难度，适合已经掌握 ES5 的开发人员，用来了解这门语言的新发展；也可当作参考手册，查寻新增的语法点。
 
 ## let和const
-### 块级作用域
+### 一、块级作用域
 
 ES5 只有全局作用域和函数作用域，没有块级作用域，这样的缺点是：1.用来计数的循环变量泄露为全局变量。2.内层变量可能会覆盖外层变量
 
@@ -41,7 +41,7 @@ const声明变量不能在声明之后再赋值,只能声明的时候进行赋�
 const p; //Uncaught SyntaxError: Missing initializer in const declaration
 p = 2;
 ```
-### let、const声明变量不存在变量提升
+### 二、let、const声明变量不存在变量提升
 ```
 a = 1;
 var a;
@@ -54,7 +54,7 @@ c = 3;
 const c; //Uncaught SyntaxError: Missing initializer in const declaration
 console.log(c);
 ```
-### 不允许重复声明
+### 三、不允许重复声明
 ```
 var a = 1;
 var a = 2;
@@ -64,7 +64,7 @@ let b = 1;
 let b = 2; //Uncaught SyntaxError: Identifier 'b' has already been declared
 console.log(b);
 ```
-### 注意
+### 四、注意
 
 const在声明对象的时候，const常量指向的是对象存储的指针，此时修改对象内部的属性并不会报错。
 ```
@@ -76,11 +76,44 @@ console.log(k); //{a:1, b:@}
 ```
 ## 结构赋值
 
-### 结构赋值的分类
+### 一、结构赋值的分类
 - 数组结构赋值
-
+```
+let a, b, rest;
+[a, b] = [1, 2];
+console.log(a, b);//1 2
+```
 - 对象结构赋值
+```
+let a, b;
+({a, b} = {a:1, b:2});
+console.log(a, b);//1  2
+```
 - 字符串结构赋值
 - 布尔结构赋值
 - 函数参数结构赋值
 - 数值结构赋值
+
+### 二、结构赋值的简单应用
+- 变量交换
+```
+let a = 1,
+b = 2;
+[a, b] = [2, 1];
+console.log(a, b); //2, 1
+```
+- 模拟去除json中某个值
+```
+let metaData = {
+    title: 'abc',
+    test: [{
+        title: 'test',
+        desc: 'description'
+    }]
+};
+
+let {title: esTitle, test:[{title:cnTitle}]} = metaData;
+
+console.log(esTitle, cnTitle); //abc, test
+```
+
