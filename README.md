@@ -1,5 +1,6 @@
 # Javascript-ES6-ECMAScript6-ES2015
-本项目对ES6涉及的语法知识给予介绍，并给出大量简洁易懂的示例代码。  本项目为中级难度，适合已经掌握 ES5 的开发人员，用来了解这门语言的新发展；也可当作参考手册，查寻新增的语法点。
+阮一峰老师写的[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)非常的棒，学习ES6看这本书基本就够了。但是这本书介绍的知识点实在太多了，就像我们中华的文字千千万，常用的也就那么些。我们没有必要把所有的文字都记住，遇到陌生的查一查就行了。
+对于初学者刚学习ES6实在没必要把所有的知识点都学一遍，太耗费精力了，不在实际中运用不久也就遗忘了。本项目对自己项目中运用过的ES6语法知识给予介绍，并给出大量简洁易懂的示例代码。  本项目为初中级难度，适合已经掌握 ES5 的开发人员，用来快速了解这门语言的新发展。
 
 ## let和const
 ### 一、块级作用域
@@ -165,6 +166,30 @@ console.log(str);
 //我是
 //一个
 //终生学习者
+```
+### 数值扩展
+
+- 二进制、八进制的表示方法
+```
+//二进制
+console.log(0b11111);
+//八进制
+console.log(0o011111);
+```
+- Number.isFinite()用来检查一个数值是否为有限的（finite）
+```
+console.log(Number.isFinite(12)); // true
+console.log(Number.isFinite(NaN)); // false
+```
+- Number.isNaN()用来检查一个值是否为NaN
+```
+console.log(Number.isNaN(1)); //false
+console.log(Number.isNaN(NaN)); //true
+console.log(Number.isNaN('1')); //false
+```
+- Number.isInteger()用来判断一个值是否为整数。需要注意的是，在 JavaScript 内部，整数和浮点数是同样的储存方法，所以 3 和 3.0 被视为同一个值
+```
+
 ```
 ## 传说中的彩蛋
 - 
