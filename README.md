@@ -205,6 +205,20 @@ console.log(Number.isSafeInteger(10));
 ```
 console.log(Math.trunc(4.5)); // 4
 ```
+- Math.sign()用来判断一个值的正负，但是如果参数是-0，它会返回-0。
+```
+console.log(Math.sign(-5)); // -1
+console.log(Math.sign(5));  // 1
+console.log(Math.sign(0));  // 0
+console.log(Math.sign(-0));  // -0
+console.log(Math.sign("40"));  // 1
+console.log(Math.sign("hello")); //NaN 
+```
+- Math.cbrt方法用于计算一个数的立方根,对于非数值，Math.cbrt方法内部也是先使用Number方法将其转为数值。x³=a，那么x叫做a的立方根
+```
+console.log(Math.cbrt(8)); //2
+```
+
 ## 传说中的彩蛋
 - 
 ## 说明
