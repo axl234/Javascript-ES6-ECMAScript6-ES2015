@@ -411,6 +411,14 @@ const obj2 = {
 console.log(obj2); //{o: 1, y: 2, test: f()}
 ```
 ### 属性表达式
+```
+let name = 'FangFei';
+const obj = {
+    [name]: 'yue'
+};
+
+console.log(obj); //{FangFei: "yue"}
+```
 ### 扩展运算符
 ### Object新增方法
 ## 传说中的彩蛋
