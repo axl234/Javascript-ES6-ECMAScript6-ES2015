@@ -384,6 +384,35 @@ function factorial(n, total) {
 
 factorial(5, 1) // 120
 ```
+## 对象扩展
+### 简洁表示法
+```
+let o = 1,
+    y = 2;
+
+const obj = {
+    o: o,
+    y: y,
+    test: function(){
+        console.log('test');
+    }
+};
+
+console.log(obj); //{o: 1, y: 2, test: f()}
+
+//简洁表示法
+const obj2 = {
+    o,
+    y,
+    test(){
+        console.log(test);
+    }
+};
+console.log(obj2); //{o: 1, y: 2, test: f()}
+```
+### 属性表达式
+### 扩展运算符
+### Object新增方法
 ## 传说中的彩蛋
 - 
 ## 说明

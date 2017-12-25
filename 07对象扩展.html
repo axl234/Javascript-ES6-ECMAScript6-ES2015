@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            //简洁表示法
+            let o = 1,
+                y = 2;
+            
+            const obj = {
+                o: o,
+                y: y,
+                test: function(){
+                    console.log('test');
+                }
+            };
+
+            console.log(obj); //{o: 1, y: 2, test: f()}
+
+            //简洁表示法
+            const obj2 = {
+                o,
+                y,
+                test(){
+                    console.log(test);
+                }
+            };
+            console.log(obj2); //{o: 1, y: 2, test: f()}
+            console.log('---------------------');
+        }
+    </script>
+</body>
+</html>
