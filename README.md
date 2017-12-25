@@ -267,8 +267,49 @@ console.log([1, 23, 45, 3, 5, 56, 23].findIndex(item => item > 20));// 1
 ```
 - includes方法返回一个布尔值，表示某个数组是否包含给定的值
 ```
+console.log([1, 2, ,3, NaN].includes(NaN)); //true
 console.log([1, 2, 34].includes(2)); //true
 ```
+## 函数扩展
+### 参数默认值
+```
+function test(x = 'Fang'){
+    console.log(x);
+}
+test('Feiyue');
+
+function test2 (x = 'Fang', y){//默认值后面不能在跟没有默认值的变量,参数默认值要放在函数参数最后面
+    console.log(x, y);//feiyue, undefined
+}
+
+test2('feiyue');
+
+//作用域
+let  x = 'test';
+
+function test2(x, y=x){
+    console.log(x, y);
+}
+
+test2('love'); //love, love
+test2(); // undefined, undefined
+
+let y = 'test2';
+function test3(c, x = y){
+    console.log(c, y);
+}
+
+test3('love'); //love, test2
+test3(); //undefined, "test2"
+```
+### rest参数
+```
+
+```
+### 扩展运算符
+### 箭头函数
+### this绑定
+### 尾调用
 ## 传说中的彩蛋
 - 
 ## 说明
