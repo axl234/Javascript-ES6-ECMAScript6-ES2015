@@ -30,9 +30,24 @@
             console.log('---------------------');
         }
         {
+            function test() {
+                console.log(arguments);
+                console.log(arguments[0]);
+                console.log(arguments.length);
+            }
+
+            test(1, 2,3, 43, 4, 5, 6);
             console.log('---------------------');
         }
         {
+            //rest参数
+            function test(...arg){ //数组
+                for (let v of arg){
+                    console.log(arg);
+                }
+            }
+
+            test(1, 2, 3, 4, 5, 6);
             console.log('---------------------');
         }
         {
