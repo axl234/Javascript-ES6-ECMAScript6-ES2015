@@ -306,14 +306,40 @@ test3(); //undefined, "test2"
 
 注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。
 ```
+function test(...arg){ //数组
+    for (let v of arg){
+        console.log(v);
+    }
+}
 
+test(1, 2, 3, 4, 5, 6);
 ```
 ### 扩展运算符
 ```
-console.log(...[1,2,3,4]); //1 2 3 4122
+console.log(...[1,2,3,4]); //1 2 3 4
 ```
 ### 箭头函数
 
+ES6允许使用“箭头”（=>）定义函数。
+```
+var f = v => v;
+等同于
+var f = function(v) {
+  return v;
+};
+```
+如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。
+```
+var f = () => 5;
+// 等同于
+var f = function () { return 5 };
+
+var sum = (num1, num2) => num1 + num2;
+// 等同于
+var sum = function(num1, num2) {
+  return num1 + num2;
+};
+```
 #### 箭头函数注意点
 - 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
 - 不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
