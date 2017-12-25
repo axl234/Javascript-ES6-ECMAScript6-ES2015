@@ -347,6 +347,43 @@ var sum = function(num1, num2) {
 - 不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
 ### this绑定
 ### 尾调用
+尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。
+```
+function f(x){
+  return g(x);
+}
+```
+f函数最后一步调用的是一个函数，属于尾调用，下面这种情况不属于尾调用
+```
+function f(x){
+  g(x);
+}
+```
+因为它等同于
+```
+function f(x){
+  g(x);
+  return undefined;
+}
+```
+#### 尾调用实践：
+递归非常耗费内存，因为需要同时保存成千上百个调用帧，很容易发生“栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“栈溢出”错误。
+```
+function factorial(n) {
+  if (n === 1) return 1;
+  return n * factorial(n - 1);
+}
+
+factorial(5) // 120
+
+换成递归如下
+function factorial(n, total) {
+  if (n === 1) return total;
+  return factorial(n - 1, n * total);
+}
+
+factorial(5, 1) // 120
+```
 ## 传说中的彩蛋
 - 
 ## 说明
