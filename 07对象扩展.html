@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
+
+    <input class="test" type="radio" name="sex"/>
+    <input type="radio" name="sex"/>
+
+    <button id="select">选中</button>
+    <button id="cancel">取消</button>
+    
     <script>
+
+
+        $('#select').on('click', function(){
+            $('.test').attr('checked', 'checked');
+        });
+        $('#cancel').on('click', function(){
+            $('.test').removeAttr('checked');
+        });
+
+
+        
+
         {
             console.log('---------------------');
         }
@@ -21,6 +41,8 @@
             console.log('---------------------');
         }
         {
+            //新增api
+            console.log(Object.IS);
             console.log('---------------------');
         }
         {
