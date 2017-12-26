@@ -246,11 +246,67 @@
         }
     }
     
+    Array.prototype.unique3 = function(){
+        var res = [];
+        var json = {};
+        for(var i = 0; i < this.length; i++){
+        if(!json[this[i]]){
+        res.push(this[i]);
+        json[this[i]] = 1;
+        }
+        }
+        return res;
+    }
+
+    Array.prototype.indexOf = function(val) {
+        for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+        }
+        return -1;
+    };
+
+    Array.prototype.remove = function(val) {
+        var index = this.indexOf(val);
+        if (index > -1) {
+        this.splice(index, 1);
+        }
+    };
+
+    var testArr = [1,2,3, 4, 5, 6, 7];
+    console.log(testArr.remove(4));
+    console.log(testArr); //[1, 2, 3, 5, 6, 7]
+
     //Demo
     layui.use('form', function () {
         var form = layui.form;
-
+        var flag = false;
+        var radios = [];
         form.on('radio(gis)', function (data) {
+
+
+            /*
+            
+            要实现的功能
+
+            */
+
+
+            if(radios.indexOf(data.elem.value)>-1){
+                data.elem.checked = false;
+                $(this).prop('checked', false);
+                form.render();
+                radios = radios.removeAttr;
+            }
+
+            radios.push(data.elem.value);
+            radios = radios.unique3();
+
+            console.log(flag);
+            console.log(radios);
+            
+            flag = !flag;
+
+
             $('#jingjing').append(
                 '<input type="hidden" name="symptom_id['+ data.elem.name + ']" value="' + data.value +'">'
             )
