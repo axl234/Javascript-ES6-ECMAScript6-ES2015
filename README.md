@@ -271,7 +271,7 @@ console.log([1, 2, ,3, NaN].includes(NaN)); //true
 console.log([1, 2, 34].includes(2)); //true
 ```
 ## 函数扩展
-### 参数默认值
+### 一、参数默认值
 ```
 function test(x = 'Fang'){
     console.log(x);
@@ -302,7 +302,7 @@ function test3(c, x = y){
 test3('love'); //love, test2
 test3(); //undefined, "test2"
 ```
-### rest参数,ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中
+### 二、rest参数,ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中
 
 注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。
 ```
@@ -314,11 +314,11 @@ function test(...arg){ //数组
 
 test(1, 2, 3, 4, 5, 6);
 ```
-### 扩展运算符
+### 三、扩展运算符
 ```
 console.log(...[1,2,3,4]); //1 2 3 4
 ```
-### 箭头函数
+### 四、箭头函数
 
 ES6允许使用“箭头”（=>）定义函数。
 ```
@@ -345,8 +345,8 @@ var sum = function(num1, num2) {
 - 不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。
 - 不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
 - 不可以使用yield命令，因此箭头函数不能用作 Generator 函数。
-### this绑定
-### 尾调用
+### 五、this绑定
+### 六、尾调用
 尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。
 ```
 function f(x){
@@ -385,7 +385,7 @@ function factorial(n, total) {
 factorial(5, 1) // 120
 ```
 ## 对象扩展
-### 简洁表示法
+### 一、简洁表示法
 ```
 let o = 1,
     y = 2;
@@ -410,7 +410,7 @@ const obj2 = {
 };
 console.log(obj2); //{o: 1, y: 2, test: f()}
 ```
-### 属性表达式
+### 二、属性表达式
 ```
 let name = 'FangFei';
 const obj = {
@@ -418,7 +418,7 @@ const obj = {
 };
 console.log(obj); //{FangFei: "yue"}
 ```
-### Object新增方法
+### 三、Object新增方法
 
 - Object.is()它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
 ```
@@ -459,7 +459,7 @@ for (let [key, value] of Object.entries(obj)){
     console.log(key, value); //name fang
 }
 ```
-### 扩展运算符
+### 四、扩展运算符
 ```
 let {a, b, ...rest} = {a:123, b:456, c:34, d:23};
 console.log(a, b, rest);//123 456 {c: 34, d: 23}
