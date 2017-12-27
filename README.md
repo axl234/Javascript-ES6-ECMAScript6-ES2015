@@ -435,8 +435,14 @@ Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
 - Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
-## 传说中的彩蛋
-- 
+```
+console.log(Object.assign({a:1}, {b:2})); //{a: 1, b: 2}
+```
+注意点：
+    - Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+    -
+## 资料借鉴
+[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
 
