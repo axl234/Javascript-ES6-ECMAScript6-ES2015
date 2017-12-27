@@ -440,6 +440,13 @@ console.log(Object.assign({a:1}, {b:2})); //{a: 1, b: 2}
 ```
 注意点：
     - Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+    ```
+    const obj1 = {a: {b: 1}};
+    const obj2 = Object.assign({}, obj1);
+
+    obj1.a.b = 2;
+    obj2.a.b // 2
+    ```
     - 对于这种嵌套的对象，一旦遇到同名属性，Object.assign的处理方法是替换，而不是添加。
     ```
     let obj = {name: 'fang'};
