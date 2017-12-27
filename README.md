@@ -460,6 +460,36 @@ for (let [key, value] of Object.entries(obj)){
     console.log(key, value); //name fang
 }
 ```
+- 扩展运算符
+```
+let {a, b, ...rest} = {a:123, b:456, c:34, d:23};
+console.log(a, b, rest);//123 456 {c: 34, d: 23}
+```
+注意：解构赋值必须是最后一个参数，否则会报错。
+```
+let { ...x, y, z } = obj; // 句法错误
+let { x, ...y, ...z } = obj; // 句法错误
+```
+扩展运算符的解构赋值，不能复制继承自原型对象的属性。
+```
+let o1 = { a: 1 };
+let o2 = { b: 2 };
+o2.__proto__ = o1;
+let { ...o3 } = o2;
+o3 // { b: 2 }
+o3.a // undefined
+```
+上面代码中，对象o3复制了o2，但是只复制了o2自身的属性，没有复制它的原型对象o1的属性。
+```
+const o = Object.create({ x: 1, y: 2 });
+o.z = 3;
+
+let { x, ...{ y, z } } = o;
+x // 1
+y // undefined
+z // 3
+```
+上面代码中，变量x是单纯的解构赋值，所以可以读取对象o继承的属性；变量y和z是扩展运算符的解构赋值，只能读取对象o自身的属性，所以变量z可以赋值成功，变量y取不到值。
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
