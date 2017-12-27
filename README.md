@@ -594,7 +594,6 @@ let list = new Set(arr);
 list.delete(1);
 console.log(list); //Set(3) {2, 3, 4}
 ```
-- 
 - Set遍历
 ```
 let arr = [1, 23, 23, 34, 5, 56, 56];
@@ -616,6 +615,16 @@ list.forEach(item=>{
 })
 ```
 ### WeakSet用法
+WeakSet的数值必须是对象，任何具有 Iterable 接口的对象，都可以作为 WeakSet 的参数。
+```
+let arr = [1, 2, 3, 4, 5, 6];
+let list3 = new WeakSet(arr);//报错
+
+let arr2 = [[1, 2, 3, 3,4, 5, 6, 6]];
+let list4 = new WeakSet(arr2);
+console.log(list4); // WeakSet {Array(8)}
+```
+由上面的代码可以看出，数组的成员成为 WeakSet 的成员，而不是数组本身。这意味着，数组的成员只能是对象，而不能是其他数据类型。
 ### Map的用法
 ### WeakMap的用法
 ## 资料借鉴

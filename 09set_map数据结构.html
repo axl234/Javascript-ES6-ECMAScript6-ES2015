@@ -8,6 +8,23 @@
 </head>
 <body>
     <script>
+
+        {
+            let list = new WeakSet();
+            console.log(list); //WeakSet {}
+
+            // let list2  = new WeakSet(1); //参数不能是数值类型
+            // console.log(list2); //报错
+    
+            let arr = [1, 2, 3, 4, 5, 6];
+            let list3 = new WeakSet(arr);//报错
+
+            let arr2 = [[1, 2, 3, 3,4, 5, 6, 6]];
+            let list4 = new WeakSet(arr2);
+            console.log(list4); // WeakSet {Array(8)}
+
+            console.log('-------------------');
+        }
         {
             let arr = [1, 2, 3, 4, 435, 45, 23, 12];
             let list = new Set(arr);
