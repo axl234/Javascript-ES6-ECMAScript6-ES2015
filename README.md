@@ -493,7 +493,7 @@ z // 3
 JavaScript 语言的数据类型：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）、Symbol
 ### 作用
 简单来说就是这种类型提供独一个一无二的值
-### DEMO
+### 初步操作
 - 声明
 ```
 // Symbol函数前不能使用new命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。
