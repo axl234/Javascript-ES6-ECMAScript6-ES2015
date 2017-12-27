@@ -536,6 +536,22 @@ for (let [key, value] of Object.entries(obj)){
     //可见并没有输出Symbol(abc): "123"
 }
 ```
+那我们怎么才能获取对象中key值为Symbol的值呢？可以使用Object.getOwnPropertySymbols(obj)
+```
+Object.getOwnPropertySymbols(obj).forEach(function(item){
+    console.log(item); //Symbol(abc)
+    console.log(obj[item]); //123
+});
+```
+从上面的代码for...of拿到了对象普通属性的key，Object.getOwnPropertySymbols拿到了对象中Symbol类型key的值，那我们怎么把他们一块拿到呢？可以用Reflect.ownKeys
+```
+Reflect.ownKeys(obj).forEach(item=>{
+    console.log(item);
+    // abc
+    // c
+    // Symbol(abc)
+});
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

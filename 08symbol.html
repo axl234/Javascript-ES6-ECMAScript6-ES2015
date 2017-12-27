@@ -35,11 +35,23 @@
 
             console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
 
+            Object.getOwnPropertySymbols(obj).forEach(function(item){
+                console.log(item); //Symbol(abc)
+                console.log(obj[item]); //123
+            })
+
             for (let [key, value] of Object.entries(obj)){
                 console.log(key, value);
                 //abc 345
                 //c 45
             }
+            console.log('-------------ownKeys------------');
+            Reflect.ownKeys(obj).forEach(item=>{
+                console.log(item);
+                // abc
+                // c
+                // Symbol(abc)
+            });
 
             console.log('-----------------------');
         }
