@@ -246,87 +246,36 @@
             };
         }
     }
-    
-    Array.prototype.unique3 = function(){
-        var res = [];
-        var json = {};
-        for(var i = 0; i < this.length; i++){
-        if(!json[this[i]]){
-        res.push(this[i]);
-        json[this[i]] = 1;
-        }
-        }
-        return res;
-    }
-
-    Array.prototype.indexOf = function(val) {
-        for (var i = 0; i < this.length; i++) {
-        if (this[i] == val) return i;
-        }
-        return -1;
-    };
-
-    Array.prototype.remove = function(val) {
-        var index = this.indexOf(val);
-        if (index > -1) {
-        this.splice(index, 1);
-        }
-    };
-
-    var testArr = [1,2,3, 4, 5, 6, 7];
-    console.log(testArr.remove(4));
-    console.log(testArr); //[1, 2, 3, 5, 6, 7]
-
-
-    //判断是否重复
-
-    function judge(arr,item){
-        for (var i = 0; i < arr.length; i++){
-            if (item){
-
-            }
-        }
-    }
 
     //Demo
     layui.use('form', function () {
         var form = layui.form;
-        var radios = [];
-        var names = [];
+        var raidoObj = {};
+        var selectedArr = [];
+
         form.on('radio(gis)', function (data) {
 
-            if(radios.indexOf(data.elem.value)>-1){
-                console.log('name===>>',data.elem.name);
-                data.elem.checked = false;
+            if (raidoObj[data.elem.name] && raidoObj[data.elem.name].indexOf(data.elem.value) >- 1){
                 $(this).prop('checked', false);
                 $('#jingjing input[value='+data.value+']').remove();
                 form.render();
-                radios = [];
+                var obj1 = {};
+                obj1[data.elem.name] = [];
+                $.extend(raidoObj,obj1);
                 return;
             }
-
+            
             $('#jingjing input[name="symptom_id['+ data.elem.name + ']"]').remove();
 
-            if (names.indexOf(data.elem.name)>-1){
-                radios = [];
-            }
-            names = [];
-            names.push(data.elem.name);
-            names = names.unique3();
-            console.log('names===>', names);
-            radios.push(data.elem.value);
-            radios = radios.unique3();
+            var obj = {};
+            var arr = [];
+            arr.push(data.elem.value);
+            obj[data.elem.name] = arr;
+            $.extend(raidoObj, obj);
 
-            console.log(radios);
-        
-            // $('#jingjing').append(
-            //     '<input type="hidden" name="symptom_id['+ data.elem.name + ']" value="' + data.value +'">'
-            // )
-
-                $('#jingjing').append(
+            $('#jingjing').append(
                 '<input type="hidden" name="symptom_id['+ data.elem.name + ']" value="' + data.value +'">'
                 )
-               
         });
         form.on('checkbox(gis)', function (data) {
             $('#jingjing').append(
