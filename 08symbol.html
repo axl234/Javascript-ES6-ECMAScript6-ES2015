@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            // 声明方式2
+            let a1 = Symbol.for('fangfeiyue');
+            console.log(a1);    // Symbol(fangfeiyue)
+            console.log('-----------------------');
+        }
+        {
+            // 声明
+            let a1 = Symbol(),
+                a2 = Symbol();
+            console.log(a1 === a2);  // false  
+            console.log(a1, a2);    // Symbol() Symbol()
+            console.log('-----------------------');
+        }
+    </script>
+</body>
+</html>

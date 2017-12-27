@@ -489,6 +489,24 @@ y // undefined
 z // 3
 ```
 上面代码中，变量x是单纯的解构赋值，所以可以读取对象o继承的属性；变量y和z是扩展运算符的解构赋值，只能读取对象o自身的属性，所以变量z可以赋值成功，变量y取不到值。
+## Symbol
+JavaScript 语言的数据类型：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）、Symbol
+### 概念
+简单来说就是这种类型提供独一个一无二的值
+### DEMO
+- 声明
+```
+// 第一种声明方式，无法取值
+let a1 = Symbol(),
+    a2 = Symbol();
+console.log(a1 === a2);  // false 
+console.log(a1, a2);    // Symbol() Symbol()
+
+// 第二种声明方式，可以取值
+let a1 = Symbol.for('fangfeiyue');
+console.log(a1);    // Symbol(fangfeiyue)
+```
+
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
