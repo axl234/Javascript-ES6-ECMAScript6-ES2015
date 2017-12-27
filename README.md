@@ -552,6 +552,72 @@ Reflect.ownKeys(obj).forEach(item=>{
     // Symbol(abc)
 });
 ```
+## Set、Map数据结构
+### Set的用法
+- 声明、添加、获取元素个数
+```
+let list = new Set();
+list.add(1);
+list.add(2);
+console.log(list); //Set(2)
+console.log(list.size); //2
+
+
+let arr = [2, 4, 345, 45, 23];
+let list = new Set(arr);
+console.log(list); //Set(5) {2, 4, 345, 45, 23}
+console.log(list.size); //5
+```
+- Set数据元素必须是唯一的
+```
+let list = new Set();
+list.add(1);
+list.add(2);
+list.add(1);
+console.log(list); //Set(2) {1, 2}，只输出了一个1
+
+
+let arr = [1, 23, 23, 34, 5, 56, 56];
+let list = new Set(arr);
+console.log(list); //Set(5) {1, 23, 34, 5, 56}
+```
+- 判断是否包含某个元素
+```
+let arr = [1, 1, 2, 3, 4, 5, 6],
+    list = new Set(arr);
+console.log(list.has(6));   //true
+```
+- 删除指定元素
+```
+let arr = [1, 2, 3, 4];
+let list = new Set(arr);
+list.delete(1);
+console.log(list); //Set(3) {2, 3, 4}
+```
+- 
+- Set遍历
+```
+let arr = [1, 23, 23, 34, 5, 56, 56];
+let list = new Set(arr);
+for (let item of list){
+    console.log('item====>>>', item);
+    //item====>>> 1
+    //item====>>> 23
+    //item====>>> 34
+    //item====>>> 5
+    //item====>>> 56
+}
+
+
+let arr = [1, 2, 3, 4, 435, 45, 23, 12];
+let list = new Set(arr);
+list.forEach(item=>{
+    console.log(item);//1, 2, 3, 4, 435, 45, 23, 12
+})
+```
+### WeakSet用法
+### Map的用法
+### WeakMap的用法
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

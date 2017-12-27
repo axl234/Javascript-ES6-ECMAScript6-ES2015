@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            let arr = [1, 2, 3, 4, 435, 45, 23, 12];
+            let list = new Set(arr);
+            list.forEach(item=>{
+                console.log(item);//1, 2, 3, 4, 435, 45, 23, 12
+            })
+            console.log('------------------');
+        }
+        {
+            //删除制定元素
+            let arr = [1, 2, 3, 4];
+            let list = new Set(arr);
+            list.delete(1);
+            console.log(list); //Set(3) {2, 3, 4}
+            console.log('------------------');
+        }
+        {
+            let arr = [1, 1, 2, 3, 4, 5, 6],
+                list = new Set(arr);
+            console.log(list.has(6));   //true
+            console.log('------------------');
+        }
+        {
+            let arr = [1, 23, 23, 34, 5, 56, 56];
+            let list = new Set(arr);
+            for (let item of list){
+                console.log('item====>>>', item);
+            }
+            console.log(list); //Set(5) {1, 23, 34, 5, 56}
+            console.log('------------------');
+        }
+        {
+            let list = new Set();
+            list.add(1);
+            list.add(2);
+            list.add(1);
+            console.log(list); //Set(2) {1, 2}
+            console.log('------------------');
+        }
+        {
+            let arr = [2, 4, 345, 45, 23];
+            let list = new Set(arr);
+            console.log(list); //Set(5) {2, 4, 345, 45, 23}
+            console.log(list.size); //5
+            console.log('------------------');
+        }
+        {
+            let list = new Set();
+            list.add(1);
+            list.add(2);
+            console.log(list); //Set(2)
+            console.log(list.size); //2
+            console.log('------------------');
+        }
+    </script>
+</body>
+</html>
