@@ -418,7 +418,6 @@ const obj = {
 };
 console.log(obj); //{FangFei: "yue"}
 ```
-### 扩展运算符
 ### Object新增方法
 
 - Object.is()它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。
@@ -460,7 +459,7 @@ for (let [key, value] of Object.entries(obj)){
     console.log(key, value); //name fang
 }
 ```
-- 扩展运算符
+### 扩展运算符
 ```
 let {a, b, ...rest} = {a:123, b:456, c:34, d:23};
 console.log(a, b, rest);//123 456 {c: 34, d: 23}
