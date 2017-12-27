@@ -491,9 +491,9 @@ z // 3
 上面代码中，变量x是单纯的解构赋值，所以可以读取对象o继承的属性；变量y和z是扩展运算符的解构赋值，只能读取对象o自身的属性，所以变量z可以赋值成功，变量y取不到值。
 ## Symbol
 JavaScript 语言的数据类型：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）、Symbol
-### 作用
+### 一、作用
 简单来说就是这种类型提供独一个一无二的值
-### 初步操作
+### 二、初步操作
 - 声明
 ```
 // Symbol函数前不能使用new命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。
@@ -518,7 +518,24 @@ let obj = {
 
 console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
 ```
+注意：对象中有用Symbol做key话通过for...in是拿不到key值的
+```
+let a1 = Symbol.for('abc');
+let obj = {
+    [a1]: '123',
+    'abc': 345,
+    'c': 456
+};
 
+console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
+
+for (let [key, value] of Object.entries(obj)){
+    console.log(key, value);
+    //abc 345
+    //c 45
+    //可见并没有输出Symbol(abc): "123"
+}
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

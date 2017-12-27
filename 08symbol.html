@@ -18,6 +18,11 @@
             console.log('-----------------------');
         }
         {
+            // let obj = {id:12, name: 'fangfeiyue', age: 27};
+            let arr = [1, 23, 334, 4, 554, 6];
+            for (let item of arr){
+                console.log(item);
+            }
             console.log('-----------------------');
         }
         {
@@ -29,6 +34,13 @@
             };
 
             console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
+
+            for (let [key, value] of Object.entries(obj)){
+                console.log(key, value);
+                //abc 345
+                //c 45
+            }
+
             console.log('-----------------------');
         }
         {
