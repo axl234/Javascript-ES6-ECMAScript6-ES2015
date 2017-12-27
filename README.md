@@ -440,7 +440,16 @@ console.log(Object.assign({a:1}, {b:2})); //{a: 1, b: 2}
 ```
 注意点：
     - Object.assign方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
-    -
+    - 对于这种嵌套的对象，一旦遇到同名属性，Object.assign的处理方法是替换，而不是添加。
+    ```
+    let obj = {name: 'fang'};
+    let obj2 = {name: 'feiyue'};
+    console.log(Object.assign(obj, obj2)); //{name: "feiyue"}
+    ```
+- Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+```
+
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
