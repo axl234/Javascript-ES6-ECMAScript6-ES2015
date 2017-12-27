@@ -21,6 +21,14 @@
             console.log('-----------------------');
         }
         {
+            let a1 = Symbol.for('abc');
+            let obj = {
+                [a1]: '123',
+                'abc': 345,
+                'c': 456
+            };
+
+            console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
             console.log('-----------------------');
         }
         {
