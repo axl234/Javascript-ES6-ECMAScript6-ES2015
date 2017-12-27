@@ -455,7 +455,10 @@ console.log(Object.assign({a:1}, {b:2})); //{a: 1, b: 2}
     ```
 - Object.entries方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
 ```
-
+let obj = {id:'12', name:'fang'};
+for (let [key, value] of Object.entries(obj)){
+    console.log(key, value); //name fang
+}
 ```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
