@@ -25,7 +25,10 @@
         }
         {
             // 声明方式2
-            let a1 = Symbol.for('fangfeiyue');
+            let a1 = Symbol.for('a1');
+            let a2 = Symbol.for('a1');
+            let a3 = Symbol.for(1);
+            console.log(a1 === a2); //true
             console.log(a1);    // Symbol(fangfeiyue)
             console.log('-----------------------');
         }

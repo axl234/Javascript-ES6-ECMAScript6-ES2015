@@ -496,15 +496,16 @@ JavaScript 语言的数据类型：undefined、null、布尔值（Boolean）、�
 ### DEMO
 - 声明
 ```
-// 第一种声明方式，无法取值
+// Symbol函数前不能使用new命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。
 let a1 = Symbol(),
     a2 = Symbol();
 console.log(a1 === a2);  // false 
 console.log(a1, a2);    // Symbol() Symbol()
 
-// 第二种声明方式，可以取值
-let a1 = Symbol.for('fangfeiyue');
-console.log(a1);    // Symbol(fangfeiyue)
+// Symbol函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。
+let a1 = Symbol.for('a1');
+let a2 = Symbol.for('a1');
+console.log(a1 === a2); //true
 ```
 
 ## 资料借鉴
