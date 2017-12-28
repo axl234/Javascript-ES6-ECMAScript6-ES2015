@@ -639,7 +639,7 @@ console.log(map.get(arr)); //123
 console.log(map); //Map(1) {Array(1) => 123}
 ```
 - 声明方式二
-注意：这种方式Map的传值必须为[[key, value], [key, value]...]
+注意：这种方式Map的传值必须为[[key, value], [key, value]...],每个小数组中只能有两个值一个key，一个value不能再有其他的
 ```
 let map = new Map([['key1', 2], ['key2', 5]]);
 console.log(map); //Map(2) {"key1" => 2, "key2" => 5}
@@ -658,6 +658,17 @@ map.clear();
 console.log(map); //Map(0) {}
 ```
 ### WeakMap的用法
+WeakMap和WeakSet都是不可以遍历的
+```
+let weakMap = new WeakMap();
+let o = {};
+weakMap.set(o, 123);
+console.log(weakMap);   //WeakMap {{…} => 123}
+console.log(weakMap.get(o)); //123
+```
+### Map和Array的对比
+### Set和Array的对比
+
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

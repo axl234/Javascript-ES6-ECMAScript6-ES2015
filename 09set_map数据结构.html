@@ -26,7 +26,11 @@
             console.log('-----------------------');
         }
         {
-
+            let weakMap = new WeakMap();
+            let o = {};
+            weakMap.set(o, 123);
+            console.log(weakMap);   //WeakMap {{…} => 123}
+            console.log(weakMap.get(o)); //123
             console.log('-----------------------');
         }
         {
