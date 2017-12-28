@@ -727,7 +727,7 @@ arr.forEach(item=>item.name ? item.name='yue' : '');
 console.log(set); //Set(2) {{…}, {…}}
 console.log(arr); //{[name: 'yue']}
 // 删
-set.delete({name: 'fang'});
+set.forEach(item => item.name ? set.delete(item) : '');
 index = arr.findIndex(item => item.name);
 arr.splice(index, 1);
 console.log(set); //Map(0) {}
