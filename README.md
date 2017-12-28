@@ -626,7 +626,9 @@ console.log(list4); // WeakSet {Array(8)}
 ```
 由上面的代码可以看出，数组的成员成为 WeakSet 的成员，而不是数组本身。这意味着，数组的成员只能是对象，而不能是其他数据类型。
 ### Map的用法
+JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。
 ```
+//声明方式一
 let map = new Map(),
     arr = [1];
 //添加元素
@@ -635,6 +637,13 @@ map.set(arr, 123);
 //获取制定的key值：get
 console.log(map.get(arr)); //123 
 console.log(map); //Map(1) {Array(1) => 123}
+
+//声明方式二
+注意：Map传的值必须是对象
+let map = new Map([['key1', 2], ['key2', 5]]);
+console.log(map); //Map(2) {"key1" => 2, "key2" => 5}
+console.log(map.size); //2
+console.log(map.delete(1),map);//false Map(2) {"key1" => 2, "key2" => 5}
 ```
 ### WeakMap的用法
 ## 资料借鉴
