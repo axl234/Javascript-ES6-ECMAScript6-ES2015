@@ -639,12 +639,16 @@ console.log(map.get(arr)); //123
 console.log(map); //Map(1) {Array(1) => 123}
 ```
 - 声明方式二
-注意：Map传的值必须是对象
+注意：这种方式Map的传值必须为[[key, value], [key, value]...]
 ```
 let map = new Map([['key1', 2], ['key2', 5]]);
 console.log(map); //Map(2) {"key1" => 2, "key2" => 5}
 console.log(map.size); //2
 console.log(map.delete(1),map);//false Map(2) {"key1" => 2, "key2" => 5}
+
+
+let map2 = new Map([['name','fangfeiyue', 'age', 18]]);
+console.log(map2); //Map(1) {"name" => "fangfeiyue"}
 ```
 - clear清空Map
 ```
