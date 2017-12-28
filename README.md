@@ -733,6 +733,40 @@ arr.splice(index, 1);
 console.log(set); //Map(0) {}
 console.log(arr); //[]
 ```
+### Map、Set、Object对比
+```
+let item = {name   : 'fang'},
+    obj  = {},
+    map  = new Map(),
+    set  = new Set();
+
+//增
+map.set('name', 'fang');
+set.add(item);
+obj['name'] = 'fang';
+console.log(map); //Map(1) {"name" => "fang"}
+console.log(set); //Set(1) {{…}}
+console.log(obj); //{name: "fang"}
+
+//查
+console.info(map.has('name'), set.has(item), 'name' in obj);// true true true
+
+//改
+map.set('name', 'yue');
+item.name   = 'yue';
+obj['name'] = 'yue';
+console.log('改',obj);   //{name: "yue"}
+console.log(map);   //Map(1) {"name" => "yue"}
+console.log(set);   //Set(1) {{…}}
+
+//删
+map.delete('name');
+set.delete(item);
+delete obj['name'];
+console.info(map); //Map(0) {}
+console.info(set); //Set(0) {}
+console.info(obj); //{}
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
