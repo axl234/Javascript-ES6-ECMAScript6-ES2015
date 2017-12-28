@@ -803,7 +803,7 @@ class Parent{
 }
 class Child extends Parent{
     constructor(name='child'){
-        super(name);
+        super(name);//一定要在第一行,如果不传值，则默认继承父类的值
         this.age = 12;
     }
 }
@@ -813,10 +813,22 @@ let parent = new Parent('fangyuenong'),
 console.log(child); //Child {name: "hello", age: 12}
 console.log(parent); //Parent {name: "fangyuenong"}
 ```
-### 三、静态方法
-### 四、静态属性
-### 五、getter
-### 六、setter
+### 五、getter、setter
+```
+class Parent{
+    constructor(name = 'feiyue'){
+        this.name = name;
+    }
+    get longName(){
+        return 'fang' + this.name;
+    }
+    set longName(value){
+        this.name = value;
+    }
+}
+let parent = new Parent();
+console.log(parent.longName ); //fangfeiyue
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

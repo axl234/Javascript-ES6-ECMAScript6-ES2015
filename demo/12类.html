@@ -21,6 +21,19 @@
             console.log('--------------------');
         }    
         {
+            class Parent{
+                constructor(name = 'feiyue'){
+                    this.name = name;
+                }
+                get longName(){
+                    return 'fang' + this.name;
+                }
+                set longName(value){
+                    this.name = value;
+                }
+            }
+            let parent = new Parent();
+            console.log(parent.longName ); //fangfeiyue
             console.log('--------------------');
         }    
         {
