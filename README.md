@@ -667,6 +667,34 @@ console.log(weakMap);   //WeakMap {{…} => 123}
 console.log(weakMap.get(o)); //123
 ```
 ### Map和Array的对比
+```
+//增
+let map = new Map(),
+    arr = [];
+map.set('name', 'fangfeiyue');
+arr.push({'name': 'fangfeiyue'});
+console.log(map);   //Map(1) {"name" => "fangfeiyue"}
+console.log(arr);   //[{…}]
+
+//查
+let map_isExit = map.has('name'),
+    arr_isExit = arr.find(item => item.name);
+console.log(map_isExit);    //true
+console.log(arr_isExit);    //{name: "fangfeiyue"}
+
+//改
+map.set('name', 'yuenong');
+arr.forEach(item => item.name ? item.name='yuenong' : '');
+console.log(map);   //Map(1) {"name" => "yuenong"}
+console.log(arr);   //[{name : "yuenong"}]
+
+//删除元素
+map.delete('name');
+let index = arr.findIndex(item => item.name);
+arr.splice(index, 1);
+console.log(map); // Map(0) {}
+console.log(arr); // []
+```
 ### Set和Array的对比
 
 ## 资料借鉴

@@ -50,10 +50,9 @@
             //删除元素
             map.delete('name');
             let index = arr.findIndex(item => item.name);
-            alert(index);
-            arr.slice(index, 1);
-            console.log(map); //Map(0) {}
-            console.log(arr);
+            arr.splice(index, 1);
+            console.log(map); // Map(0) {}
+            console.log(arr); // []
             console.log('----------------------');
         }
     </script>
