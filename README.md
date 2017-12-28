@@ -829,6 +829,30 @@ class Parent{
 let parent = new Parent();
 console.log(parent.longName ); //fangfeiyue
 ```
+### 静态方法
+注意：静态方法通过类去调用而不是通过类的实例去调用
+```
+class Parent{
+    constructor(name = 'fangfeiyue'){
+        this.name = name;
+    }
+    static tell(){
+        console.log('执行了静态方法');
+    }
+}
+Parent.tell(); //执行了静态方法
+```
+### 静态属性
+```
+class Parent{
+    constructor(name = 'fangfeiyue'){
+        this.name = name;
+    }
+}
+//静态属性
+Parent.age = 18;
+console.log(Parent.age); //18
+```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明

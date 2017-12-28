@@ -15,9 +15,27 @@
             console.log('--------------------');
         }    
         {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            //静态属性
+            Parent.age = 18;
+            console.log(Parent.age); //18
             console.log('--------------------');
         }    
         {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+                static tell(){
+                    console.log('执行了静态方法');
+                }
+            }
+
+            Parent.tell(); //执行了静态方法
             console.log('--------------------');
         }    
         {
