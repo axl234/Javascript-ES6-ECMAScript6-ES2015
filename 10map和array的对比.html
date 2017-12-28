@@ -24,6 +24,41 @@
             console.log('----------------------');
         }
         {
+            let index,
+                set_isExit,
+                arr_isExit,
+
+                set = new Set(),
+                arr = [];
+            // 增
+            set.add({name: 'fang'});
+            arr.push({name: 'fang'});
+            console.log(set); //Set(1) {{…}}
+            console.log(arr); //[{…}]
+
+            //查
+            //has({name:'fang'})是一个新生成的对象，返回肯定是false
+            //要想输出true，这个对象必须被保存到一个才行
+            let obj = {age:12};
+            set.add(obj);
+            console.log('sdsdf====>', set.has(obj)); //true
+            set_isExit = set.has({name:'fang'});
+            arr_isExit = arr.find(item => item.name);
+            console.log('let',set_isExit, arr_isExit); //false {name: "fang"}
+
+            // 改
+            console.log('改改改改改改');
+            console.log(arr);
+            set.forEach(item=>item.name ? item.name='yue' : '');
+            arr.forEach(item=>item.name ? item.name='yue' : '');
+            console.log(set); //Set(2) {{…}, {…}}
+            console.log(arr); //{[name: 'yue']}
+            // 删
+            set.delete({name: 'fang'});
+            index = arr.findIndex(item => item.name);
+            arr.splice(index, 1);
+            console.log(set); //Map(0) {}
+            console.log(arr); //[]
             console.log('----------------------');
         }
         {
