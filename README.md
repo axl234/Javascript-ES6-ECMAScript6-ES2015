@@ -626,6 +626,16 @@ console.log(list4); // WeakSet {Array(8)}
 ```
 由上面的代码可以看出，数组的成员成为 WeakSet 的成员，而不是数组本身。这意味着，数组的成员只能是对象，而不能是其他数据类型。
 ### Map的用法
+```
+let map = new Map(),
+    arr = [1];
+//添加元素
+map.set(arr, 123);
+
+//获取制定的key值：get
+console.log(map.get(arr)); //123 
+console.log(map); //Map(1) {Array(1) => 123}
+```
 ### WeakMap的用法
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
