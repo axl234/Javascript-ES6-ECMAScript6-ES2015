@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('--------------------');
+        }    
+        {
+            console.log('--------------------');
+        }    
+        {
+            console.log('--------------------');
+        }    
+        {
+            console.log('--------------------');
+        }    
+        {
+            console.log('--------------------');
+        }    
+        {
+            // 继承传递参数
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            class Child extends Parent{
+                constructor(name='child'){
+                    super(name);
+                    this.age = 12;
+                }
+            }
+
+            let parent = new Parent('fangyuenong'),
+                child = new Child('hello');
+            console.log(child); //Child {name: "hello", age: 12}
+            console.log(parent); //Parent {name: "fangyuenong"}
+            console.log('--------------------');
+        }    
+        {
+            // 继承
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            class Child extends Parent{
+
+            }
+
+            let parent = new Parent('fangyuenong'),
+                child = new Child();
+            console.log(child); //Child {name: "fangfeiyue"}
+            console.log('--------------------');
+        }    
+        {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+
+            let parent = new Parent('fangyuenong');
+            console.log('构造函数和实例', parent); //Parent {name: "fangyuenong"}
+            console.log('--------------------');
+        }    
+    </script>
+</body>
+</html>

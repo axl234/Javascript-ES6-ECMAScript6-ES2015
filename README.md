@@ -767,6 +767,56 @@ console.info(map); //Map(0) {}
 console.info(set); //Set(0) {}
 console.info(obj); //{}
 ```
+## 类
+### 一、基本语法
+```
+class Parent{
+    constructor(name = 'fangfeiyue'){
+        this.name = name;
+    }
+}
+
+let parent = new Parent('fangyuenong');
+console.log('构造函数和实例', parent); //Parent {name: "fangyuenong"}
+```
+### 二、类的继承
+```
+class Parent{
+    constructor(name = 'fangfeiyue'){
+        this.name = name;
+    }
+}
+class Child extends Parent{
+
+}
+
+let parent = new Parent('fangyuenong'),
+    child = new Child();
+console.log(child); //Child {name: "fangfeiyue"}
+```
+### 继承传递参数
+```
+class Parent{
+    constructor(name = 'fangfeiyue'){
+        this.name = name;
+    }
+}
+class Child extends Parent{
+    constructor(name='child'){
+        super(name);
+        this.age = 12;
+    }
+}
+
+let parent = new Parent('fangyuenong'),
+    child = new Child('hello');
+console.log(child); //Child {name: "hello", age: 12}
+console.log(parent); //Parent {name: "fangyuenong"}
+```
+### 三、静态方法
+### 四、静态属性
+### 五、getter
+### 六、setter
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
