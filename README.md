@@ -2,7 +2,6 @@
 前端近些年发展很快，作为前端技术的核心支撑JS也从ES5过渡到了ES6，强有力的推进了前端的发展。作为一名前端从业人员学习掌握ES6是必不可少的一项技能。阮一峰老师写的[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)非常的棒，学习ES6看这本书基本就够了。但是这本书介绍的知识点实在太多了，就像我们中华的文字千千万，常用的也就那么些。我们没有必要把所有的文字都记住，遇到陌生的查一查就行了。
 
 对于初学者刚学习ES6实在没必要把所有的知识点都学一遍，太耗费精力了，不在实际中运用不久也就遗忘了。本项目对自己项目中运用过的ES6语法知识给予介绍，并给出大量简洁易懂的示例代码,对于初学者来说敲过本项目中的代码，基本就入门ES6了，再在实际中运用所学知识、补充不足，相信很快就能掌握ES6的。
-
 ## let和const
 ### 一、块级作用域
 
@@ -852,6 +851,73 @@ class Parent{
 //静态属性
 Parent.age = 18;
 console.log(Parent.age); //18
+```
+## Promise
+Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。简单使用：
+```
+let ajax = function(){
+    console.log('执行2');
+    return new Promise(function(resolve, reject){
+        setTimeout(() => {
+            resolve();
+        }, 1000);
+    });
+};     
+
+ajax().then(function(){
+    console.log('Promise', 'timer2');
+});
+```
+- Promise.all()
+```
+function loadImg(src){
+    return new Promise((resolve, reject)=>{
+        let img = document.createElement('img');
+        img.src = src;
+        img.onload=function(){
+            resolve(img);
+        };
+        img.onerror=function(){
+            reject(err);
+        };
+    });
+}
+function showImgs(imgs){
+    imgs.forEach(img => {
+        document.body.appendChild(img);
+    });
+}
+
+Promise.all([
+    loadImg('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=49366202,632101467&fm=27&gp=0.jpg'),
+    loadImg('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=594559231,2167829292&fm=27&gp=0.jpg'),
+    loadImg('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1501729109,4046516680&fm=27&gp=0.jpg')
+]).then(showImgs);
+```
+- Promise.race()
+```
+function loadImg(src){
+    return new Promise((resolve, reject)=>{
+        let img = document.createElement('img');
+        img.src = src;
+        img.onload = function(){
+            resolve(img);
+        };
+        img.onerror = function(){
+            reject(err);
+        };
+    });
+}
+
+function showImg(img){
+    document.body.appendChild(img);
+}
+
+Promise.race([
+    loadImg('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1517420881,1284406776&fm=27&gp=0.jpg',),
+    loadImg('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2546506461,4214746746&fm=11&gp=0.jpg'),
+    loadImg('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1517420881,1284406776&fm=27&gp=0.jpg')
+]).then(showImg);
 ```
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
