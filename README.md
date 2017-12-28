@@ -794,7 +794,7 @@ let parent = new Parent('fangyuenong'),
     child = new Child();
 console.log(child); //Child {name: "fangfeiyue"}
 ```
-### 继承传递参数
+### 三、继承传递参数
 ```
 class Parent{
     constructor(name = 'fangfeiyue'){
@@ -813,7 +813,7 @@ let parent = new Parent('fangyuenong'),
 console.log(child); //Child {name: "hello", age: 12}
 console.log(parent); //Parent {name: "fangyuenong"}
 ```
-### 五、getter、setter
+### 四、getter、setter
 ```
 class Parent{
     constructor(name = 'feiyue'){
@@ -829,7 +829,7 @@ class Parent{
 let parent = new Parent();
 console.log(parent.longName ); //fangfeiyue
 ```
-### 静态方法
+### 五、静态方法
 注意：静态方法通过类去调用而不是通过类的实例去调用
 ```
 class Parent{
@@ -842,7 +842,7 @@ class Parent{
 }
 Parent.tell(); //执行了静态方法
 ```
-### 静态属性
+### 六、静态属性
 ```
 class Parent{
     constructor(name = 'fangfeiyue'){
