@@ -920,6 +920,49 @@ Promise.race([
     loadImg('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1517420881,1284406776&fm=27&gp=0.jpg')
 ]).then(showImg);
 ```
+## 模块化
+ES6 模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性。
+### 一、export 命令
+export命令用于规定模块的对外接口，一个模块就是一个独立的文件。该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须使用export关键字输出该变量
+```
+export var firstName = 'Michael';
+export var lastName = 'Jackson';
+export var year = 1958;
+``` 
+export的写法，除了像上面这样，还有另外一种。
+```
+var firstName = 'Michael';
+var lastName = 'Jackson';
+var year = 1958;
+
+export {firstName, lastName, year};
+```
+需要特别注意的是，export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系
+```
+// 报错
+export 1;
+
+// 报错
+var m = 1;
+export m;
+```
+上面两种写法都会报错，因为没有提供对外的接口。第一种写法直接输出 1，第二种写法通过变量m，还是直接输出 1。1只是一个值，不是接口。正确的写法是下面这样。
+```
+// 写法一
+export var m = 1;
+
+// 写法二
+var m = 1;
+export {m};
+
+// 写法三
+var n = 1;
+export {n as m};
+```
+上面三种写法都是正确的，规定了对外的接口m。其他脚本可以通过这个接口，取到值1。它们的实质是，在接口名与模块内部变量之间，建立了一一对应的关系。
+### 二、import 命令
+使用export命令定义了模块的对外接口以后，其他 JS 文件就可以通过import命令加载这个模块
+
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
 ## 说明
