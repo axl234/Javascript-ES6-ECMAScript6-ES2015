@@ -868,7 +868,7 @@ ajax().then(function(){
     console.log('Promise', 'timer2');
 });
 ```
-- Promise.all()
+- Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例
 ```
 function loadImg(src){
     return new Promise((resolve, reject)=>{
@@ -894,7 +894,8 @@ Promise.all([
     loadImg('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1501729109,4046516680&fm=27&gp=0.jpg')
 ]).then(showImgs);
 ```
-- Promise.race()
+只有这 3 个实例的状态都变成fulfilled，或者其中有一个变为rejected，才会调用Promise.all方法后面的回调函数。
+- Promise.race()方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。只要有一个实例率先改变状态，变量状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给变量的回调函数。
 ```
 function loadImg(src){
     return new Promise((resolve, reject)=>{
