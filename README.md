@@ -966,6 +966,46 @@ export {n as m};
 JavaScript 原有的表示“集合”的数据结构，主要是数组（Array）和对象（Object），ES6 又添加了Map和Set。这样就有了四种数据集合，用户还可以组合使用它们，定义自己的数据结构，比如数组的成员是Map，Map的成员是对象。这样就需要一种统一的接口机制，来处理所有不同的数据结构。
 
 遍历器（Iterator）就是这样一种机制。它是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。
+- 简单demo
+```
+let arr = ['hello', 'world'];
+let map = arr[Symbol.iterator]();
+console.log(JSON.stringify(map.next())); //{"value":"hello","done":false}
+console.log(JSON.stringify(map.next())); //{"value":"world","done":false}
+console.log(JSON.stringify(map.next())); //{"done":true}
+```
+- 部署Iterator接口
+```
+let obj = {
+    start:[1, 3, 2],
+    end:[7, 8, 9],
+    [Symbol.iterator](){
+        let self = this;
+        let index = 0;
+        let arr = self.start.concat(self.end);
+        let len = arr.length;
+        return {
+            next(){
+                if (index < len){
+                    return {
+                        value: arr[index++],
+                        done: false
+                    };    
+                }else{
+                    return {
+                        value: arr[index++],
+                        done: true
+                    };
+                }
+            }
+        };
+    }
+};
+
+for (let key of obj){
+    console.log(key);//1, 3, 2, 7, 9, 8
+}
+```
 
 ## 资料借鉴
 [《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)
