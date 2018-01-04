@@ -4,7 +4,7 @@
 对于初学者刚学习ES6实在没必要把所有的知识点都学一遍，太耗费精力了，不在实际中运用不久也就遗忘了。本项目对自己项目中运用过的ES6语法知识给予介绍，并给出大量简洁易懂的示例代码,对于初学者来说敲过本项目中的代码，基本就入门ES6了，再在实际中运用所学知识、补充不足，相信很快就能掌握ES6的。
 ## 下载源码
 ```
-https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015.git
+git clone https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015.git
 ```
 ## 运行项目
 ```
