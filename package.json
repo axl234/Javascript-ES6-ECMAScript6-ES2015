@@ -1,49 +1,40 @@
 {
-  "name": "Javascript-ES6-ECMAScript6-ES2015",
-  "version": "1.0.0",
-  "description": "前端近些年发展很快，作为前端技术的核心支撑JS也从ES5过渡到了ES6，强有力的推进了前端的发展。作为一名前端从业人员学习掌握ES6是必不可少的一项技能。阮一峰老师写的[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/#README)非常的棒，学习ES6看这本书基本就够了。但是这本书介绍的知识点实在太多了，就像我们中华的文字千千万，常用的也就那么些。我们没有必要把所有的文字都记住，遇到陌生的查一查就行了。",
+  "name": "es6",
+  "version": "1.0.1",
+  "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://fangfeiyue@github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015/issues"
-  },
-  "homepage": "https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015#readme",
-  "dependencies": {
-    "express": "^4.16.2"
-  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "del": "^3.0.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0",
+    "connect-livereload": "^0.6.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
-    "gulp-live-server": "0.0.31",
+    "gulp-live-server": "0.0.30",
     "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sequence": "^1.0.0",
-    "gulp-uglify": "^3.0.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^2.1.0",
     "gulp-util": "^3.0.8",
-    "require-dir": "^0.3.2",
+    "jquery": "^3.2.1",
+    "require-dir": "^0.3.1",
     "vinyl-named": "^1.1.0",
-    "webpack": "^3.10.0",
-    "webpack-stream": "^4.0.0",
-    "yargs": "^10.0.3"
+    "webpack": "^2.2.1",
+    "webpack-stream": "^3.2.0",
+    "yargs": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }

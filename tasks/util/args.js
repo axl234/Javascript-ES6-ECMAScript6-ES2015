@@ -23,3 +23,5 @@ const args = yargs.option('production',{
     describe: 'server port'
 })
 .argv
+
+export default args;
