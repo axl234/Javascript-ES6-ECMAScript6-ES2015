@@ -9,6 +9,7 @@ git clone https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015.git
 ## 运行项目
 ```
 npm install
+gulp --watch
 ```
 ## 技术选型
 - 版本控制：git 
