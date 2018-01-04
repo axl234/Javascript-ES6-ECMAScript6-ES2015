@@ -10,6 +10,11 @@ git clone https://github.com/fangfeiyue/Javascript-ES6-ECMAScript6-ES2015.git
 ```
 npm install
 ```
+## 技术选型
+- 版本控制：git 
+- 开发工具：vscode
+- js版本：ES6
+- 辅助工具：babel、webpack、gulp
 ## let和const
 ### 一、块级作用域
 
