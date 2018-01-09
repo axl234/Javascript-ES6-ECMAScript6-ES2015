@@ -1,1 +1,2 @@
-import './class/05数组扩展.js';
+import 'babel-polyfill';
+import lottery from './lottery.js';
