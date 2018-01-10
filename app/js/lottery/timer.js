@@ -19,7 +19,7 @@ class Timer{
                   px_s = 1000;
 
             let r = [],
-                d = Math.floor(last_time/px_d),
+                d = Math.floor(last_time / px_d),
                 h = Math.floor((last_time - d * px_d) / px_h),
                 m = Math.floor((last_time - d * px_d - h * px_h) / px_m),
                 s = Math.floor((last_time - d * px_d - h * px_h - m * px_m) / px_s);
