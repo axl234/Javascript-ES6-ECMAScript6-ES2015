@@ -2,7 +2,7 @@
  * @Author: FangFeiyue 
  * @Date: 2018-01-10 13:56:35 
  * @Last Modified by: FangFeiyue
- * @Last Modified time: 2018-01-10 17:00:19
+ * @Last Modified time: 2018-01-10 18:37:11
  */
 class Calculate{
     /**
